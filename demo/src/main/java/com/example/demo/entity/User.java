@@ -23,4 +23,5 @@ public class User {
     @NotNull
     @NotBlank(message = "fill it")
     private String email;
+    private String gender;
 }

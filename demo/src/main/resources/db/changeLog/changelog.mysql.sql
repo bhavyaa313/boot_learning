@@ -1,0 +1,12 @@
+-- liquibase formatted sql
+
+-- changeset PCA84:1727437934698-1
+CREATE TABLE posts (id BIGINT AUTO_INCREMENT NOT NULL, title VARCHAR(100) NOT NULL, content VARCHAR(255) NULL, author VARCHAR(255) NOT NULL, created_date datetime NOT NULL, modified_date datetime NULL, CONSTRAINT PK_POSTS PRIMARY KEY (id));
+
+-- changeset PCA84:1727437934698-2
+CREATE TABLE user (id BIGINT NOT NULL, email VARCHAR(255) NOT NULL, name VARCHAR(255) NULL, gender VARCHAR(255) NULL, CONSTRAINT PK_USER PRIMARY KEY (id));
+
+-- changeset PCA84:1727437934698-3
+CREATE TABLE user_seq (next_val BIGINT NULL);
+
+
