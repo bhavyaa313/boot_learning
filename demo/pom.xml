@@ -129,14 +129,38 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.liquibase</groupId>-->
+<!--				<artifactId>liquibase-maven-plugin</artifactId>-->
+<!--				<configuration>-->
+<!--					<propertyFile>src/main/resources/application.properties</propertyFile>-->
+<!--					<propertyFileWillOverride>true</propertyFileWillOverride>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
+
 			<plugin>
 				<groupId>org.liquibase</groupId>
 				<artifactId>liquibase-maven-plugin</artifactId>
+				<version>4.27.0</version>
 				<configuration>
-					<propertyFile>src/main/resources/application.properties</propertyFile>
-					<propertyFileWillOverride>true</propertyFileWillOverride>
+					<!-- Path to changelog file -->
+					<changeLogFile>src/main/resources/db/changeLog/changelog-master.sql</changeLogFile>
+
+					<!-- Database connection details -->
+					<url>jdbc:mysql://localhost:3306/blog_verse</url>
+					<username>root</username>
+					<password>root</password>
+					<driver>com.mysql.cj.jdbc.Driver</driver>
+
+<!--					&lt;!&ndash; Optional: Ensure Liquibase runs with the desired context (optional) &ndash;&gt;-->
+<!--					<contexts>development</contexts>-->
+
+					<!-- Optional: Add logging level for more information -->
+					<logLevel>debug</logLevel>
 				</configuration>
 			</plugin>
+
+
 		</plugins>
 	</build>
 
