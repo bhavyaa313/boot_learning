@@ -34,7 +34,7 @@ public class PostController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deletePost(@PathVariable Long id) {
-           return postService.deletePost(id);
+        return postService.deletePost(id);
     }
 
     @GetMapping("/get-post-by-id/{id}")
@@ -61,7 +61,6 @@ public class PostController {
     public List<PostResponseDto> getSortedPostByTitle() {
         return postService.sortPostsByTitle();
     }
-
 
 
 }

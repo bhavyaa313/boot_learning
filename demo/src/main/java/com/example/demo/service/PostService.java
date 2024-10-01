@@ -11,13 +11,21 @@ import java.util.Optional;
 public interface PostService {
 
     List<PostResponseDto> getAllPosts();
+
     ResponseEntity<Void> deletePost(Long id);
+
     Optional<PostResponseDto> getPostById(Long id);
+
     PostResponseDto saveOrUpdatePost(PostRequestDto post);
+
     List<PostResponseDto> getPostByAuthor(String Author);
+
     List<PostResponseDto> getPostByTitle(String title);
+
     List<PostResponseDto> sortPostsByDate();
+
     List<PostResponseDto> sortPosts(PostSorter sorter);
+
     List<PostResponseDto> sortPostsByTitle();
 
     default void logPostUpdate(Long postId, String updateType) {

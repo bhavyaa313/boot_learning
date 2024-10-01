@@ -1,4 +1,4 @@
-package com.example.demo.serviceImpl;
+package com.example.demo.service.impl;
 
 import com.example.demo.model.dto.request.PostRequestDto;
 import com.example.demo.model.dto.response.PostResponseDto;
@@ -68,9 +68,7 @@ public class PostServiceImpl implements PostService, PostLogger {
 
     @Override
     public List<PostResponseDto> getAllPosts() {
-        return postRepository.findAll().stream()
-                .map(postMapper::postToPostResponseDto)
-                .collect(Collectors.toList());
+        return postRepository.findAll().stream().map(postMapper::postToPostResponseDto).collect(Collectors.toList());
     }
 
     @Override
@@ -103,8 +101,7 @@ public class PostServiceImpl implements PostService, PostLogger {
         //      return posts.stream().filter(post -> author == null || post.getAuthor().toLowerCase().startsWith(author.toLowerCase())).collect(Collectors.toList());
         PostHelper.setAuthor(author);
 
-        return posts.stream()
-                .filter(PostHelper::isAuthorMatching).map(postMapper::postToPostResponseDto)  // use of Method reference, passing author from context
+        return posts.stream().filter(PostHelper::isAuthorMatching).map(postMapper::postToPostResponseDto)  // use of Method reference, passing author from context
                 .collect(Collectors.toList());
     }
 
@@ -119,9 +116,7 @@ public class PostServiceImpl implements PostService, PostLogger {
     public List<PostResponseDto> sortPostsByDate() {
         List<Post> posts = postRepository.findAll();  // Fetch all Posts
         posts.sort(Comparator.comparing(Post::getCreatedDate));
-        return posts.stream()
-                .map(postMapper::postToPostResponseDto)
-                .collect(Collectors.toList());
+        return posts.stream().map(postMapper::postToPostResponseDto).collect(Collectors.toList());
     }
 
 
@@ -130,9 +125,7 @@ public class PostServiceImpl implements PostService, PostLogger {
         List<Post> posts = postRepository.findAll();
         // Use method reference from the functional interface
         //his method reference is equivalent to passing a lambda expression like (post1, post2) -> sorter.compare(post1, post2).
-        return posts.stream()
-                .sorted(sorter::compare).map(postMapper::postToPostResponseDto)
-                .collect(Collectors.toList());
+        return posts.stream().sorted(sorter::compare).map(postMapper::postToPostResponseDto).collect(Collectors.toList());
     }
 
     @Override

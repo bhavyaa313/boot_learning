@@ -18,5 +18,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findByNameContaining(@Param("name") String name);
 
 
-
 }

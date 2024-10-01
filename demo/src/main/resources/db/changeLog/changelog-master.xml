@@ -6,7 +6,7 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
     <changeSet id="001" author="Bhavyaa">
-        <sqlFile path="change/user_info.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="change/create_user.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="002" author="Bhavyaa">

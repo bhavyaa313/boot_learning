@@ -1,9 +1,6 @@
 package com.example.demo.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -21,7 +18,9 @@ public class User {
     private long id;
     private String name;
     @NotNull
-    @NotBlank(message = "fill it")
+    @NotBlank(message = "Please provide the email")
     private String email;
     private String gender;
+    @Column(name = "mobile_number")
+    private String mobileNumber;
 }
