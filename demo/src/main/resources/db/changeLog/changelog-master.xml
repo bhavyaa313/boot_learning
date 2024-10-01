@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- Include all SQL files from the specified directory -->
+<!--    <includeAll path="db/changelog/change" relativeToChangelogFile="true" />-->
+
+    <changeSet id="001" author="Bhavyaa">
+        <sqlFile path="change/user_info.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="002" author="Bhavyaa">
+        <sqlFile path="change/create_posts.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>

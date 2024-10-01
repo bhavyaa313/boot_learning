@@ -1,12 +1,9 @@
-package com.example.demo.interfaces;
+package com.example.demo.model.mapper;
 
-import com.example.demo.dto.PostRequestDto;
-import com.example.demo.dto.PostResponseDto;
-import com.example.demo.entity.Post;
+import com.example.demo.model.dto.request.PostRequestDto;
+import com.example.demo.model.dto.response.PostResponseDto;
+import com.example.demo.model.entity.Post;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
-import org.mapstruct.MappingTarget;
-import org.mapstruct.factory.Mappers;
 
 @Mapper(componentModel = "spring")
 public interface PostMapper {

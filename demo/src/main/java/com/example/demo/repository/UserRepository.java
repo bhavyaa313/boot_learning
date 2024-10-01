@@ -1,10 +1,9 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.User;
+import com.example.demo.model.entity.User;
 import com.example.demo.interfaces.UserSummary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;

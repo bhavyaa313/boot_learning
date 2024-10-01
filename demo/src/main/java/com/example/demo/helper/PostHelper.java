@@ -1,6 +1,6 @@
 package com.example.demo.helper;
 
-import com.example.demo.entity.Post;
+import com.example.demo.model.entity.Post;
 import lombok.Setter;
 
 

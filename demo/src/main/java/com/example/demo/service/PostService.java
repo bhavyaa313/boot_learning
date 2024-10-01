@@ -1,8 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.PostRequestDto;
-import com.example.demo.dto.PostResponseDto;
-import com.example.demo.entity.Post;
+import com.example.demo.model.dto.request.PostRequestDto;
+import com.example.demo.model.dto.response.PostResponseDto;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;

@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.PostRequestDto;
-import com.example.demo.dto.PostResponseDto;
+import com.example.demo.model.dto.request.PostRequestDto;
+import com.example.demo.model.dto.response.PostResponseDto;
 import com.example.demo.service.PostService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

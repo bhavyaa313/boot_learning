@@ -1,12 +1,15 @@
-package com.example.demo.service;
+package com.example.demo.serviceImpl;
 
-import com.example.demo.dto.PostRequestDto;
-import com.example.demo.dto.PostResponseDto;
-import com.example.demo.entity.Post;
+import com.example.demo.model.dto.request.PostRequestDto;
+import com.example.demo.model.dto.response.PostResponseDto;
+import com.example.demo.model.entity.Post;
 import com.example.demo.exception.PostNotFoundException;
 import com.example.demo.helper.PostHelper;
-import com.example.demo.interfaces.PostMapper;
+import com.example.demo.model.mapper.PostMapper;
 import com.example.demo.repository.PostRepository;
+import com.example.demo.service.PostLogger;
+import com.example.demo.service.PostService;
+import com.example.demo.service.PostSorter;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
