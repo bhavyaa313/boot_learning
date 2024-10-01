@@ -30,12 +30,9 @@ public class PostServiceImpl implements PostService, PostLogger {
 
     Logger log = LogManager.getLogger(PostServiceImpl.class);
 
-    // Inject the mapper (or use the static instance directly)
-   // private final PostMapper postMapper = PostMapper.INSTANCE;
 
-
-@Autowired
-private  PostMapper postMapper;
+    @Autowired
+    private PostMapper postMapper;
 
 
     @Override
@@ -43,9 +40,7 @@ private  PostMapper postMapper;
         // If ID is null or doesn't exist, it's a new post (create operation)
         var id = postRequestDto.getId();
         if (id == null || id == 0) {
-
             Post post = postMapper.postDtoToPost(postRequestDto);
-
             post.setCreatedDate(LocalDateTime.now());
             StringJoiner stringJoiner = new StringJoiner("| ");
             stringJoiner.add("Title: " + post.getTitle());
@@ -61,7 +56,7 @@ private  PostMapper postMapper;
                 Post existingPost = postOptional.get();
                 existingPost.setModifiedDate(LocalDateTime.now());
                 log.info("Updating post", existingPost);
-                Post updatedPost =  postRepository.save(existingPost);
+                Post updatedPost = postRepository.save(existingPost);
                 return postMapper.postToPostResponseDto(updatedPost);
 
             } else {
@@ -82,9 +77,8 @@ private  PostMapper postMapper;
     public ResponseEntity<Void> deletePost(Long id) {
         Optional<Post> postOptional = postRepository.findById(id);
         if (postOptional.isPresent()) {
-        postRepository.deleteById(id);
-        }
-        else {
+            postRepository.deleteById(id);
+        } else {
             throw new PostNotFoundException("Post with ID " + id + " not found");
         }
 
@@ -97,8 +91,7 @@ private  PostMapper postMapper;
         if (postOptional.isPresent()) {
             PostResponseDto postResponseDto = postMapper.postToPostResponseDto(postOptional.get());
             return Optional.of(postResponseDto);
-        }
-        else {
+        } else {
             throw new PostNotFoundException("Post with ID " + id + " not found");
         }
     }

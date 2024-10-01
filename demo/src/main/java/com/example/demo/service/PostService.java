@@ -10,7 +10,6 @@ import java.util.Optional;
 
 public interface PostService {
 
-
     List<PostResponseDto> getAllPosts();
     ResponseEntity<Void> deletePost(Long id);
     Optional<PostResponseDto> getPostById(Long id);

@@ -5,15 +5,16 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <!-- Include all SQL files from the specified directory -->
-<!--    <includeAll path="db/changelog/change" relativeToChangelogFile="true" />-->
-
     <changeSet id="001" author="Bhavyaa">
         <sqlFile path="change/user_info.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
     <changeSet id="002" author="Bhavyaa">
         <sqlFile path="change/create_posts.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="003" author="Bhavyaa">
+        <sqlFile path="change/add_mobile_number_to_users.sql" relativeToChangelogFile="true"/>
     </changeSet>
 
 </databaseChangeLog>

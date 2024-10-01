@@ -8,8 +8,6 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface PostMapper {
 
-//    PostMapper INSTANCE = Mappers.getMapper(PostMapper.class);
-//
     Post postDtoToPost(PostRequestDto postRequestDto);
 
     PostRequestDto postToPostDto(Post post);
